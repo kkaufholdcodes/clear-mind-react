@@ -1,13 +1,10 @@
-// Make the DIV element draggable:
+// Make the slider icon element draggable:
 dragElement(document.getElementById("mySliderIcon"));
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0;
   //grab the element you are trying to move:
   if (document.getElementById(elmnt.id)) {
-    //document.getElementById(elmnt.id).onmousedown = dragMouseDown;
-  //} else {
-    // otherwise, move the DIV from anywhere inside the DIV: 
     elmnt.onmousedown = dragMouseDown;
   }
 
