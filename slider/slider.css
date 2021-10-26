@@ -21,10 +21,5 @@
   width: 12px;
   border-radius: 2px;
   background-color: black;
-}
-
-#mySliderIconheader {
-  height: 10px;
-  width: 8px;
   cursor: row-resize;
 }
