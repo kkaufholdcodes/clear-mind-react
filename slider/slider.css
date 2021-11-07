@@ -2,7 +2,7 @@
     display: flex;
 }
 
-.labels-container div {
+#labels-container div {
   text-align: right;
 }
 
@@ -23,3 +23,6 @@
   background-color: black;
   cursor: row-resize;
 }
+
+
+
