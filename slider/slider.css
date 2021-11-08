@@ -2,11 +2,19 @@
     display: flex;
 }
 
+.horizontal-flex-container {
+  display: inline-flex;
+}
+
+#label-container {
+  justify-content: space-between;
+}
+
 #labels-container div {
   text-align: right;
 }
 
-.slider-track {
+#slider-track {
   width: 8px;
   height: 100%;
   background: linear-gradient(to bottom,hsl(0,100%,50%),hsl(60,100%,50%),hsl(120,100%,50%),hsl(180,100%,50%),hsl(240,100%,50%),hsl(300,100%,50%),hsl(360,100%,50%));

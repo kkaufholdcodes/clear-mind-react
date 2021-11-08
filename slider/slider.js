@@ -35,35 +35,29 @@ function dragElement(elmnt) {
 
 
 function applySliderConfigs(color, size, scale, defaultPosition) {
+  //set slider icon color
   document.getElementById("mySliderIcon").style.backgroundColor = color;
-  //set size
-  //set scale
+
+  //set slider track size
+  document.getElementById("slider-track").style.height = size;
+ 
+  //pass in an array of values to create slider scale
+  for (i=0;i<scale.length;i++) {
+    var labelDiv = document.createElement("DIV");
+    labelDiv.innerHTML = scale[i] + "&mdash;";
+    document.getElementById("labels-container").appendChild(labelDiv);
+  }
   //set default slider position
+  document.getElementById("mySliderIcon").style.top = document.getElementById("mySliderIcon").style.top + defaultPosition;
 }
 
-applySliderConfigs("coral");
+applySliderConfigs("coral", "200px", [1,2,3], "159px");
 
 //branch name: slider-component-js-part-2
 //other requirements:
 //constrain slider along y axis
 //change layout to be responsive (up to your interpretation (user passes in value or based on viewport size))
 //pass in default slider position (middle, top, bottom)
-
-function writeSliderRange(sliderRangeArr) {
-  //user passes in values
-  //iterate through the values
-  for (i=0;i<sliderRangeArr.length;i++) {
-    var labelDiv = document.createElement("DIV");
-    labelDiv.innerHTML = sliderRangeArr[i] + "&mdash;";
-    document.getElementById("labels-container").appendChild(labelDiv);
-  }
-  //store range in a variable
-  //loop through array
-  //create a div for each value of the array
-  //append those divs to the DOM inside the container
-}
-
-writeSliderRange([0, 10, 20, 30, 40, 50]);
 
 
 

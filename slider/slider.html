@@ -1,4 +1,4 @@
-=<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Slider</title>
@@ -6,11 +6,32 @@
     </head>
 
     <body>
+        <div>
+            <p>Input slider configs:</label>
+            <form class="horizontal-flex-container">
+                <div>
+                    <label>Button color:</label>
+                    <input type="text" id="color-input">
+                </div>
+                <div>
+                    <label>Track height:</label>
+                    <input type="text" id="track-height-input">
+                </div>
+                <div>
+                    <label>Interval labels:</label>
+                    <input type="text" id="interval-input">
+                </div>
+                <div>
+                    <label>Default button position:</label>
+                    <input type="text" id="default-button-input">
+                </div>
+            </form>
+        </div>
         <div class="flex-container">
               <div id="labels-container">
             </div>
             <div class="flex-container">
-                <div class="slider-track">
+                <div id="slider-track">
                     <div id="mySliderIcon"></div>
                 </div>
             </div>
