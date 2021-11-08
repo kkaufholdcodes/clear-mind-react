@@ -1,3 +1,5 @@
+import React from 'react';
+
 // Make the slider icon element draggable:
 dragElement(document.getElementById("mySliderIcon"));
 
@@ -34,24 +36,24 @@ function dragElement(elmnt) {
 }
 
 
-function applySliderConfigs(color, size, scale, defaultPosition) {
+function applySliderConfigs(buttonColor, trackHeight, trackIntervals, defaultButtonPosition) {
   //set slider icon color
-  document.getElementById("mySliderIcon").style.backgroundColor = color;
+  document.getElementById("mySliderIcon").style.backgroundColor = buttonColor;
 
   //set slider track size
-  document.getElementById("slider-track").style.height = size;
+  document.getElementById("slider-track").style.height = trackHeight;
  
   //pass in an array of values to create slider scale
-  for (i=0;i<scale.length;i++) {
+  for (i=0;i<trackIntervals.length;i++) {
     var labelDiv = document.createElement("DIV");
-    labelDiv.innerHTML = scale[i] + "&mdash;";
+    labelDiv.innerHTML = trackIntervals[i] + "&mdash;";
     document.getElementById("labels-container").appendChild(labelDiv);
   }
   //set default slider position
-  document.getElementById("mySliderIcon").style.top = document.getElementById("mySliderIcon").style.top + defaultPosition;
+  document.getElementById("mySliderIcon").style.top = document.getElementById("mySliderIcon").style.top + defaultButtonPosition;
 }
 
-applySliderConfigs("coral", "200px", [1,2,3], "159px");
+//applySliderConfigs("coral", "200px", [1,2,3], "159px");
 
 //branch name: slider-component-js-part-2
 //other requirements:
@@ -60,5 +62,14 @@ applySliderConfigs("coral", "200px", [1,2,3], "159px");
 //pass in default slider position (middle, top, bottom)
 
 
+function getSliderInput(){
+  const buttonColor = document.getElementById("color-input").value;
+  const trackHeight = document.getElementById("track-height-input").value;
+  const trackIntervals = document.getElementById("track-intervals-input").value;
+  const defaultButtonPosition = document.getElementById("default-position-input").value;
 
+  console.log(buttonColor, trackHeight, trackIntervals, defaultButtonPosition);
+  applySliderConfigs(buttonColor, trackHeight, trackIntervals, defaultButtonPosition);
+  
+}
 

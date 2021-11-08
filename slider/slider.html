@@ -6,9 +6,9 @@
     </head>
 
     <body>
-        <div>
+        <div class="form">
             <p>Input slider configs:</label>
-            <form class="horizontal-flex-container">
+            <form onsubmit="getSliderInput()" class="horizontal-flex-container">
                 <div>
                     <label>Button color:</label>
                     <input type="text" id="color-input">
@@ -19,12 +19,13 @@
                 </div>
                 <div>
                     <label>Interval labels:</label>
-                    <input type="text" id="interval-input">
+                    <input type="text" id="track-intervals-input">
                 </div>
                 <div>
                     <label>Default button position:</label>
-                    <input type="text" id="default-button-input">
+                    <input type="text" id="default-position-input">
                 </div>
+                <input type="submit" name="submit">
             </form>
         </div>
         <div class="flex-container">
