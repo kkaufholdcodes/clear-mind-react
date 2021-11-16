@@ -1,4 +1,3 @@
-import React from 'react';
 
 // Make the slider icon element draggable:
 dragElement(document.getElementById("mySliderIcon"));
@@ -53,16 +52,9 @@ function applySliderConfigs(buttonColor, trackHeight, trackIntervals, defaultBut
   document.getElementById("mySliderIcon").style.top = document.getElementById("mySliderIcon").style.top + defaultButtonPosition;
 }
 
-//applySliderConfigs("coral", "200px", [1,2,3], "159px");
+applySliderConfigs("coral", "200px", [1,2,3], "159px");
 
-//branch name: slider-component-js-part-2
-//other requirements:
-//constrain slider along y axis
-//change layout to be responsive (up to your interpretation (user passes in value or based on viewport size))
-//pass in default slider position (middle, top, bottom)
-
-
-function getSliderInput(){
+function getSliderInput(event){
   const buttonColor = document.getElementById("color-input").value;
   const trackHeight = document.getElementById("track-height-input").value;
   const trackIntervals = document.getElementById("track-intervals-input").value;
@@ -70,6 +62,10 @@ function getSliderInput(){
 
   console.log(buttonColor, trackHeight, trackIntervals, defaultButtonPosition);
   applySliderConfigs(buttonColor, trackHeight, trackIntervals, defaultButtonPosition);
-  
 }
 
+document.getElementById('submit-button')
+  .addEventListener('click', (e) => {
+    e.preventDefault();
+    getSliderInput();
+  });
