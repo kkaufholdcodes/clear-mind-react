@@ -1,4 +1,3 @@
-
 // Make the slider icon element draggable:
 dragElement(document.getElementById("mySliderIcon"));
 
@@ -8,6 +7,7 @@ function dragElement(elmnt) {
   if (document.getElementById(elmnt.id)) {
     elmnt.onmousedown = dragMouseDown;
   }
+}
 
   function dragMouseDown(e) {
     e.preventDefault();
@@ -32,7 +32,7 @@ function dragElement(elmnt) {
     document.onmouseup = null;
     document.onmousemove = null;
   }
-}
+
 
 
 function applySliderConfigs(buttonColor, trackHeight, trackIntervals, defaultButtonPosition) {
@@ -43,6 +43,8 @@ function applySliderConfigs(buttonColor, trackHeight, trackIntervals, defaultBut
   document.getElementById("slider-track").style.height = trackHeight;
  
   //pass in an array of values to create slider scale
+  //CLEAR EXISTING DIVS
+  document.getElementById("labels-container").innerHTML = '';
   for (i=0;i<trackIntervals.length;i++) {
     var labelDiv = document.createElement("DIV");
     labelDiv.innerHTML = trackIntervals[i] + "&mdash;";
@@ -52,7 +54,7 @@ function applySliderConfigs(buttonColor, trackHeight, trackIntervals, defaultBut
   document.getElementById("mySliderIcon").style.top = document.getElementById("mySliderIcon").style.top + defaultButtonPosition;
 }
 
-applySliderConfigs("coral", "200px", [1,2,3], "159px");
+//applySliderConfigs("coral", "200px", [1,2,3], "159px");
 
 function getSliderInput(event){
   const buttonColor = document.getElementById("color-input").value;
