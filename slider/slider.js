@@ -1,13 +1,17 @@
 // Make the slider icon element draggable:
-dragElement(document.getElementById("mySliderIcon"));
+//dragElement(document.getElementById("mySliderIcon"));
 
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0;
+var button = document.getElementById("mySliderIcon");
+
+//function dragElement(elmnt) {
+  //var pos1 = 0, pos2 = 0;
   //grab the element you are trying to move:
-  if (document.getElementById(elmnt.id)) {
-    elmnt.onmousedown = dragMouseDown;
-  }
-}
+  //if (document.getElementById("mySliderIcon")) {
+    //elmnt.onmousedown = dragMouseDown;
+  //}
+//}
+
+document.getElementById("mySliderIcon").onmousedown = dragMouseDown;
 
   function dragMouseDown(e) {
     e.preventDefault();
@@ -24,7 +28,7 @@ function dragElement(elmnt) {
     pos1 = pos2 - e.clientY;
     pos2 = e.clientY;
     // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos1) + "px";
+    button.style.top = (button.offsetTop - pos1) + "px";
   }
 
   function closeDragElement() {
@@ -69,5 +73,12 @@ function getSliderInput(event){
 document.getElementById('submit-button')
   .addEventListener('click', (e) => {
     e.preventDefault();
-    getSliderInput();
+    //getSliderInput();
+    const buttonColor = document.getElementById("color-input").value;
+    const trackHeight = document.getElementById("track-height-input").value;
+    const trackIntervals = document.getElementById("track-intervals-input").value;
+    const defaultButtonPosition = document.getElementById("default-position-input").value;
+
+    console.log(buttonColor, trackHeight, trackIntervals, defaultButtonPosition);
+    applySliderConfigs(buttonColor, trackHeight, trackIntervals, defaultButtonPosition);
   });
