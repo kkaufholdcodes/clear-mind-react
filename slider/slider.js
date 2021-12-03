@@ -16,6 +16,7 @@ document.getElementById("mySliderIcon").onmousedown = dragMouseDown;
     e.preventDefault();
     // get the mouse cursor position at startup:
     pos2 = e.clientY;
+    console.log(pos2);
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
@@ -27,16 +28,23 @@ document.getElementById("mySliderIcon").onmousedown = dragMouseDown;
     pos1 = pos2 - e.clientY;
     pos2 = e.clientY;
     // set the element's new position:
-    button.style.top = (button.offsetTop - pos1) + "px";
+    console.log(pos1, pos2);
+    if (pos2 < 105) {
+      button.style.top = "105px";
+    } else if (pos2 + "px"  > yConstraint) {
+      button.style.top = yConstraint + "px";
+    } else {
+      button.style.top = (button.offsetTop - pos1) + "px";
+    } 
   }
+
+  let yConstraint = document.getElementById("track-height-input").value;
 
   function closeDragElement() {
     // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
   }
-
-
 
 function applySliderConfigs(buttonColor, trackHeight, trackIntervals, defaultButtonPosition) {
   //set slider icon color
