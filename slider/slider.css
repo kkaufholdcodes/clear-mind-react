@@ -1,14 +1,31 @@
 .flex-container {
     display: flex;
+    align-items: stretch;
 }
 
-.labels-container div {
-  text-align: right;
+.horizontal-flex-container {
+  display: inline-flex;
 }
 
-.slider-track {
-  width: 8px;
+.form {
+  padding-bottom: 20px;
+}
+
+#labels-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
+}
+
+#labels-container div {
+  text-align: right;
+  height: 100%;
+}
+
+#slider-track {
+  width: 8px;
+  height: 100px;
   background: linear-gradient(to bottom,hsl(0,100%,50%),hsl(60,100%,50%),hsl(120,100%,50%),hsl(180,100%,50%),hsl(240,100%,50%),hsl(300,100%,50%),hsl(360,100%,50%));
   border-radius: 20px;
 }
@@ -23,3 +40,6 @@
   background-color: black;
   cursor: row-resize;
 }
+
+
+
