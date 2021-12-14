@@ -1,12 +1,4 @@
-/*const folder = {
-    name,
-    contents, //will be an array. empty array if empty
-    dateCreated,
-    id,
-    level
-  };*/
-  
-  const folders = [
+const folders = [
     {
       name: 'Work',
       contents: [
