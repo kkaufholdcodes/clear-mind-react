@@ -1,0 +1,25 @@
+nav ul {
+    display: flex;
+    width: 100%;
+}
+
+.level1-static li {
+    display: inline-block;
+    text-decoration: none;
+    padding: 6px 6px;
+    border: 1px solid grey;
+    margin: 0;
+}
+
+.level1-static h2:hover ul:first-child {
+    display: block;
+}
+
+.level1-static h2:hover {
+    text-decoration: underline;
+    color: fuchsia;
+}
+
+.ddlevel2-dropdown {
+    display: none;
+}
